@@ -1,0 +1,55 @@
+<app-user-layout></app-user-layout>
+<br/><br />
+<div class="myContent">
+  <div class="container">
+    <form #addsong="ngForm" (ngSubmit)="addSong(addsong)" ngNativeValidate>
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <h2 style="text-align:center">Adding Song Step 1</h2>
+          <br />
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Song Name</label>
+            </div>
+            <div class="col; input-group">
+              <input type="text" name="songname" #songname="ngModel" class="form-control qkinput" required ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Date Of Release</label>
+            </div>
+            <div class="col; input-group">
+              <input type="text" name="release" #release="ngModel" class="form-control qkinput" required ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Average Rating</label>
+            </div>
+            <div class="col; input-group">
+              <input type="number" name="rating" #rating="ngModel" class="form-control qkinput" min="1" max="5" required ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Select Cover Image</label>
+            </div>
+            <div class="col; input-group">
+              <input type="text" name="image" #image="ngModel" class="form-control qkinput"  value="later" required ngModel>
+            </div>
+          </div>
+
+          <div class="form-group" style="text-align:left">
+            <button type="submit" class="btn">Add</button> &nbsp;&nbsp;
+            <a routerLink="/home">Cancel</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

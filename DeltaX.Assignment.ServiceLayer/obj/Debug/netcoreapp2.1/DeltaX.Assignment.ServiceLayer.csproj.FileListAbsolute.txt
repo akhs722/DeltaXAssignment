@@ -1,0 +1,17 @@
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.deps.json
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.runtimeconfig.json
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.runtimeconfig.dev.json
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.dll
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.pdb
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.csprojAssemblyReference.cache
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.RazorAssemblyInfo.cache
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.RazorAssemblyInfo.cs
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.AssemblyInfo.cs
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.RazorTargetAssemblyInfo.cache
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.dll
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.pdb
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.DataAccesslayer.dll
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.DataAccesslayer.pdb
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.csproj.CopyComplete

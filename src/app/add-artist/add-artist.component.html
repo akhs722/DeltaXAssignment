@@ -1,0 +1,27 @@
+<app-user-layout></app-user-layout>
+<div style="text-align:center;">
+  <br /><br />
+  <h2>Add Artists</h2>
+  <br />
+  <br />
+  <div class="table-responsive">
+    <table class="table" style="border:5px solid rgba(220,230,242,1);">
+      <tr style="background-color:rgba(220,230,242,1); font-size:12pt">
+        <th style="text-align:center;">Choose The Artist </th>
+        <th style="text-align:center;">Action</th>
+      </tr>
+      <tr style="background-color:white;text-align:center;">
+        <td>
+          <select class="form-control" #artistdrop (change)="addArtist(artistdrop.value)">
+            <option value="empty">Choose</option>
+            <option *ngFor="let artist of ArtistList" value={{artist.artistId}}>
+              {{artist.artistName}}
+            </option>
+          </select>
+        </td>
+        <td><button (click)="addArtist(artistdrop.value)" title="Add">Add</button> </td>
+      </tr>
+      
+    </table>
+  </div>
+</div>

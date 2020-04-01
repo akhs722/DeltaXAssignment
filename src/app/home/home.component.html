@@ -1,0 +1,62 @@
+<div *ngIf="userLayout">
+  <app-user-layout></app-user-layout>
+</div>
+<div *ngIf="commonLayout">
+  <app-common-layout></app-common-layout>
+</div>
+<br />
+<br />
+<div style="text-align:center;">
+  <h2>Top 10 Songs</h2>
+  <br />
+  <div class="table-responsive">
+    <table class="table" style="border:5px solid rgba(220,230,242,1);" *ngIf="SongList">
+      <tr style="background-color:rgba(220,230,242,1); font-size:12pt">
+        <th>Song Name</th>
+        <th>Date Of Release</th>
+        <th>Average Rating</th>
+        <th>Artists</th>
+        <th>Rate</th>
+      </tr>
+      <tr *ngFor="let s of SongList" style="background-color:white">
+        <td>{{s.songName }}</td>
+        <td>{{s.dateOfRelease}}</td>
+        <td>{{s.averageRating}}</td>
+        <td>
+          {{GetArtistsOfSong(s.songId)}}
+          <!--<ul *ngFor="let a of Artists">
+            <li>{{a.artistName}}</li>
+          </ul>-->
+        </td>
+          <td>
+          <select class="form-control" #ratingdrop (change)="Rate(ratingdrop.value)">
+            <option value="0">No Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+  <h2>Top 10 Artists</h2>
+  <br />
+  <div class="table-responsive">
+    <table class="table" style="border:5px solid rgba(220,230,242,1);" *ngIf="ArtistList">
+      <tr style="background-color:rgba(220,230,242,1); font-size:12pt">
+        <th>Artist Name</th>
+        <th>Date Of Birth</th>
+        <th>Average Rating</th>
+      </tr>
+      <tr *ngFor="let a of ArtistList" style="background-color:white">
+        <td>{{a.artistName}}</td>
+        <td>{{a.dateOfBirth}}</td>
+        <td>{{a.averageRating}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
