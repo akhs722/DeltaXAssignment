@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IArtist } from '../interfaces/artists';
 import { ArtistsService } from 'src/services/info-service/artists.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { and } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-add-artist',
@@ -10,6 +11,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class AddArtistComponent implements OnInit {
 
+  showDiv: boolean = false;
   songId: number;
   ArtistList: IArtist[];
   status: number;
@@ -17,7 +19,7 @@ export class AddArtistComponent implements OnInit {
   constructor(private route: ActivatedRoute,private router:Router, private _artistservice: ArtistsService) { }
 
   ngOnInit() {
-
+    this.email = sessionStorage.getItem('userEmail');
     if (this.email == null) {
       alert("You need to Login First")
       this.router.navigate(['/login']);
@@ -37,8 +39,7 @@ export class AddArtistComponent implements OnInit {
   }
   addArtist(artistId:number)
   {
-    if (artistId != 0)
-    {
+    if (artistId > 99) {
       this._artistservice.songArtistRelation(this.songId, artistId).subscribe(
         x => {
           this.status = x;
@@ -54,6 +55,11 @@ export class AddArtistComponent implements OnInit {
         },
         () => console.log("method executed successfully")
       );
+    }
+    else if (artistId == 6)
+    {
+      this.showDiv = true;
+      alert(artistId)
     }
   }
 }

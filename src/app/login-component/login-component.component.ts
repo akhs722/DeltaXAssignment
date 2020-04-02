@@ -24,6 +24,7 @@ export class LoginComponentComponent implements OnInit {
        }
         else {
           alert("Try again with valid credentials");
+          this.status = false;
         }
       },
       y => {
@@ -31,7 +32,10 @@ export class LoginComponentComponent implements OnInit {
       },
       () => console.log("method executed successfully")
     );
-
+    if (this.status == false)
+    {
+      this.ngOnInit()
+    }
   }
   ngOnInit() {
   }

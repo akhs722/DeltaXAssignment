@@ -12,15 +12,34 @@
       <tr style="background-color:white;text-align:center;">
         <td>
           <select class="form-control" #artistdrop (change)="addArtist(artistdrop.value)">
-            <option value="empty">Choose</option>
+            <option value=0>Choose</option>
             <option *ngFor="let artist of ArtistList" value={{artist.artistId}}>
               {{artist.artistName}}
             </option>
+            <option value=6>Add New Artist</option>
           </select>
         </td>
       </tr>
+      <tr *ngIf ="" style="background-color:white;text-align:center;">
+        <td>
+          <div class="col; input-group">
+            <input type="text" name="artistname" #artistname="ngModel" class="form-control qkinput" required ngModel>
+          </div>
+        </td>
+        <td>
+          <div class="col; input-group">
+            <input type="text" name="dob" #dob="ngModel" class="form-control qkinput" required ngModel>
+          </div>
+        </td>
+        <td>
+          <div class="col; input-group">
+            <input type="text" name="average" #songname="ngModel" class="form-control qkinput" required ngModel>
+          </div>
+        </td>
+      </tr>
+
       <a class="nav-link" routerLink="/home" href="#">Home</a>
-      
+
     </table>
   </div>
 </div>
