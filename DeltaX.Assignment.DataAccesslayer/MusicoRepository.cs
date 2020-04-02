@@ -169,6 +169,49 @@ namespace DeltaX.Assignment.DataAccessLayer
         }
         #endregion
 
+        #region AddArtist
+        public int AddArtist(string ArtistName, DateTime DateOfBirth,string Bio)
+        {
+            int result = 0;
+            try
+            {
+                SqlParameter prmArtistName = new SqlParameter("@ArtistName", ArtistName);
+                SqlParameter prmDateOfBirth = new SqlParameter("@DateOfBirth", DateOfBirth);
+                prmDateOfBirth.SqlDbType = System.Data.SqlDbType.DateTime;
+                SqlParameter prmBio = new SqlParameter("@Bio", Bio);
+                SqlParameter returnValue = new SqlParameter("@return", System.Data.SqlDbType.Int);
+                returnValue.Direction = System.Data.ParameterDirection.Output;
+                context.Database.ExecuteSqlCommand("EXEC @return = usp_AddArtist @ArtistName, @DateOfBirth, @Bio", new[] { returnValue, prmArtistName, prmDateOfBirth, prmBio });
+                result = Convert.ToInt32(returnValue.Value);
+            }
+            catch (Exception e)
+            {
+                result = -99;
+                //Console.WriteLine(e.Message);
+            }
+            return result;
+        }
+        #endregion
+
+        #region GetAllArtists
+        public List<Artists> GetAllArtists()
+        {
+            List<Artists> ArtistsList = null;
+            try
+            {
+                ArtistsList = context.Artists.FromSql("SELECT * FROM dbo.Artists").ToList();
+            }
+            catch (Exception e)
+            {
+                ArtistsList = null;
+                Console.WriteLine(e.Message);
+            }
+            return ArtistsList;
+        }
+        #endregion
+
+
+
     }
 }
 

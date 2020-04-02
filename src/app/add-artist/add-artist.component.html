@@ -20,25 +20,40 @@
           </select>
         </td>
       </tr>
-      <tr *ngIf ="" style="background-color:white;text-align:center;">
-        <td>
-          <div class="col; input-group">
-            <input type="text" name="artistname" #artistname="ngModel" class="form-control qkinput" required ngModel>
+      <br />
+      <div *ngIf="showDiv">
+        <h3>Add Artist Details</h3>
+        <div class="form-group">
+          <div class="col" style="text-align:left">
+            <label>Artist Name</label>
           </div>
-        </td>
-        <td>
           <div class="col; input-group">
-            <input type="text" name="dob" #dob="ngModel" class="form-control qkinput" required ngModel>
+            <input type="text" name="artistname" #name="ngModel" class="form-control qkinput" required ngModel>
           </div>
-        </td>
-        <td>
+        </div>
+        <div class="form-group">
+          <div class="col" style="text-align:left">
+            <label>Date Of Birth</label>
+          </div>
           <div class="col; input-group">
-            <input type="text" name="average" #songname="ngModel" class="form-control qkinput" required ngModel>
+            <input type="date" name="dob" #dob="ngModel" class="form-control qkinput" required ngModel>
           </div>
-        </td>
-      </tr>
+        </div>
+        <div class="form-group">
+          <div class="col" style="text-align:left">
+            <label>Bio</label>
+          </div>
+          <div class="col; input-group">
+            <input type="text" name="bio" #bio="ngModel" class="form-control qkinput" required ngModel>
+          </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+          <button type="submit" (click)="addNewArtist(name.value,dob.value,bio.value)" class="btn">Add</button> &nbsp;&nbsp;
+        </div>
+      </div>
 
-      <a class="nav-link" routerLink="/home" href="#">Home</a>
+        <a routerLink="/home">Home</a>
+      
 
     </table>
   </div>

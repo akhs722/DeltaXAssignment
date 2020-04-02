@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { IUser } from '../../app/interfaces/user';
 import { IRating } from '../../app/interfaces/rating';
 import { ISong } from '../../app/interfaces/songs';
+import { IArtistStructure } from 'src/app/interfaces/artist';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +29,11 @@ export class UserService {
     var songObj: ISong;
     songObj = { songId: 0, songName: songName, dateOfRelease: dateOfRelease, averageRating: averageRating, imageCoverLocation: imageCoverLocation};
     return this.http.post<number>('http://localhost:49486/api/User/AddSong',songObj).pipe(catchError(this.errorHandler));
+  }
+  AddArtist(artistName: string, dateOfbirth: Date, bio: string): Observable<number> {
+    var artistObj: IArtistStructure;
+    artistObj = { artistId: 0, artistName: artistName, dateOfBirth: dateOfbirth, bio: bio};
+    return this.http.post<number>('http://localhost:49486/api/User/AddArtist', artistObj).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

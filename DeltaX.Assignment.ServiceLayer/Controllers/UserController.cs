@@ -5,18 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DeltaX.Assignment.DataAccessLayer;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+
 namespace DeltaX.Assignment.ServiceLayer.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         MusicoRepository repo = null;
 
-        public UserController()
+        public UserController(IHostingEnvironment env)
         {
+           
             repo = new MusicoRepository();
         }
+        public class FileUploadAPI
+        {
+            public IFormFile files { get; set; }
+        }
+
         #region ValidateUserCredentials
         [HttpPost]
         public bool ValidateUserCredentials(DataAccesslayer.Models.UserDetails userDetails)
@@ -35,7 +44,6 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
             return status;
         }
         #endregion
-
 
         #region Rating
         [HttpPut]
@@ -71,8 +79,26 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
         }
         #endregion
 
-    }
+        #region AddArtist
+        [HttpPost]
+        public int AddArtist(Models.Artists artist)
+        {
+            int status = 0;
+            try
+            {
+                status = repo.AddArtist(artist.ArtistName, artist.DateOfBirth, artist.Bio);
+            }
+            catch (Exception)
+            {
+                status = -99;
+            }
+            return status;
+        }
+        #endregion
 
+
+    }
 }
+
 
 

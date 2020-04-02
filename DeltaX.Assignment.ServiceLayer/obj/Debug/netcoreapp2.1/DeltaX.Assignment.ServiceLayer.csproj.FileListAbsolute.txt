@@ -15,3 +15,4 @@ C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.Service
 C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.DataAccesslayer.dll
 C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.DataAccesslayer.pdb
 C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\obj\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.csproj.CopyComplete
+C:\Users\akhil\source\repos\DeltaX.Assignment.Solution\DeltaX.Assignment.ServiceLayer\bin\Debug\netcoreapp2.1\DeltaX.Assignment.ServiceLayer.Views.dll

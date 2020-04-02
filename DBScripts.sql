@@ -48,6 +48,10 @@ IF OBJECT_ID('usp_SongArtistRelation')  IS NOT NULL
 DROP PROCEDURE usp_SongArtistRelation
 GO
 
+IF OBJECT_ID('usp_AddArtist')  IS NOT NULL
+DROP PROCEDURE usp_AddArtist
+GO
+
 create table UserDetails(
 userid numeric identity(1000,1) primary key,
 email varchar(200) unique,
@@ -224,3 +228,20 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE usp_AddArtist
+(
+	@ArtistName VARCHAR(200),
+    @DateOfBirth date,
+	@Bio varchar(1000)
+)
+AS
+BEGIN
+		BEGIN TRY
+		INSERT INTO Artists VALUES (@ArtistName,@DateOfBirth,@Bio)
+		RETURN 1
+		END TRY
+	BEGIN CATCH
+		RETURN -99
+	END CATCH
+END
+GO

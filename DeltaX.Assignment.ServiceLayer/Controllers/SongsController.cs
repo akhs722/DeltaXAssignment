@@ -50,7 +50,7 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
             return Artists;
         }
         #endregion
-
+        
 
     }
 

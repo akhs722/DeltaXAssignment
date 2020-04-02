@@ -9,7 +9,7 @@ namespace DeltaX.Assignment.ServiceLayer.Models
     {
         public decimal ArtistId { get; set; }
         public string ArtistName { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Bio { get; set; }
     }
 }

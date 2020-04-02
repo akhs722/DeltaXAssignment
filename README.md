@@ -1,15 +1,6 @@
 # DeltaXAssignment
 This repository includes the solution for the given problem statement.
 
-Note: Login Credentials
-
-1) If using angular then default page will be home.
-2) You will have to login for making any edits.
-3) The credentials are as follows
-
-Email-> abc@abc.com
-Password -> abc123
-
 
 The Application includes three layers
 
@@ -31,7 +22,7 @@ NOTE: I have not included the "node_modules"
 
 3)DataAccessLayer and Service Layer Folder.
 
-Steps to operate
+teps to operate
 
 1) Create a blank solution in your Visual Studio then 
 	a) Add DataAccessLayer to the above solution and build
@@ -40,14 +31,23 @@ Steps to operate
 
 2) DataAccessLayer includes the controllers and actions.
 
-Steps to test using Postman
-
-Open postman and by refering to the controllers and actions url you can easily check the post,put,get methods
-
-
 Using Angular 
 
-Angular includes various components, after creating and compiling the project the home component can be seen.
+[Note]: 
+
+1) If using angular then default page will be /home.
+2) You will have to login for making any edits or updates.
+3) The Login Credentials are as follows
+
+Email-> abc@abc.com
+Password -> abc123
+
+Using Postman
+
+Open postman and by refering to the controllers and actions url you can easily test the post,put,get methods.
+
+
+
  
 
 

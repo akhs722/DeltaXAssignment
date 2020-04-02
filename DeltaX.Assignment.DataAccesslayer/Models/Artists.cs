@@ -12,7 +12,7 @@ namespace DeltaX.Assignment.DataAccesslayer.Models
 
         public decimal ArtistId { get; set; }
         public string ArtistName { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Bio { get; set; }
 
         public ICollection<SongArtistRelation> SongArtistRelation { get; set; }

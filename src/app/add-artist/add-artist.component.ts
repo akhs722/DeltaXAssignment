@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IArtist } from '../interfaces/artists';
 import { ArtistsService } from 'src/services/info-service/artists.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute, Data } from '@angular/router';
 import { and } from '@angular/router/src/utils/collection';
+import { UserService } from 'src/services/user-service/user.service';
+import { IArtistStructure } from '../interfaces/artist';
 
 @Component({
   selector: 'app-add-artist',
@@ -12,11 +14,12 @@ import { and } from '@angular/router/src/utils/collection';
 export class AddArtistComponent implements OnInit {
 
   showDiv: boolean = false;
+  flag: number;
   songId: number;
-  ArtistList: IArtist[];
+  ArtistList: IArtistStructure[];
   status: number;
   email: string;
-  constructor(private route: ActivatedRoute,private router:Router, private _artistservice: ArtistsService) { }
+  constructor(private route: ActivatedRoute,private router:Router, private _artistservice: ArtistsService,private _userservice:UserService) { }
 
   ngOnInit() {
     this.email = sessionStorage.getItem('userEmail');
@@ -27,7 +30,7 @@ export class AddArtistComponent implements OnInit {
 
     this.songId = this.route.snapshot.params['songId'];
 
-    this._artistservice.getArtists().subscribe(
+    this._artistservice.getAllArtists().subscribe(
       x => {
         this.ArtistList = x;
       },
@@ -48,6 +51,7 @@ export class AddArtistComponent implements OnInit {
           }
           else {
             alert("Try again after some time");
+            this.ngOnInit()
           }
         },
         y => {
@@ -56,10 +60,35 @@ export class AddArtistComponent implements OnInit {
         () => console.log("method executed successfully")
       );
     }
-    else if (artistId == 6)
-    {
+    else if (artistId == 6) {
       this.showDiv = true;
-      alert(artistId)
+    }
+    else
+    {
+      this.showDiv = false;
     }
   }
+
+  addNewArtist(name: string, date: Date, bio: string)
+  {
+    this._userservice.AddArtist(name, date,bio).subscribe(
+      x => {
+        this.flag = x;
+        if (this.flag == 1) {
+          alert("Artist added now choose from the dropdown.");
+          this.ngOnInit()
+        }
+        else {
+          alert("Try again after some time");
+          this.ngOnInit()
+        }
+      },
+      y => {
+        console.log(y);
+      },
+      () => console.log("method executed successfully")
+    );
+  }
+
+
 }

@@ -47,6 +47,7 @@ namespace DeltaX.Assignment.ServiceLayer
                 app.UseHsts();
             }
             app.UseCors("EnableCORS");
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
