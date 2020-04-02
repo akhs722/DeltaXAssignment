@@ -8,7 +8,7 @@ Note: Login Credentials
 3) The credentials are as follows
 
 Email-> abc@abc.com
-Password -> 
+Password -> abc123
 
 
 The Application includes three layers
