@@ -18,7 +18,9 @@ The Application includes three layers
 3) PresentationLayer using Angular6
 4) DataBase Used Microsoft SQL Server
 5) Software Tool used is Visual Studio 2017 and Microsoft SQL Server Management Studio 18
+6) Database Microsft SQL Server Express
 
+At first you need to Execute the Ms-Sql scripts provided.
 
 In the Repository
 
