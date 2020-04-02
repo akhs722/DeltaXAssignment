@@ -38,7 +38,6 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
         [HttpGet]
         public List<DataAccesslayer.Models.ArtistsName> GetArtistsOfSong(decimal SongId)
         {
-            //string Artists = null;
             List<DataAccesslayer.Models.ArtistsName> Artists = null;
             try
             {
@@ -52,7 +51,7 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
         }
         #endregion
 
-       
+
     }
-      
+
 }

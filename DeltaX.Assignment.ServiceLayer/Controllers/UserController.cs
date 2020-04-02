@@ -19,28 +19,20 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
         }
         #region ValidateUserCredentials
         [HttpPost]
-        public string ValidateUserCredentials(DataAccesslayer.Models.UserDetails userDetails)
+        public bool ValidateUserCredentials(DataAccesslayer.Models.UserDetails userDetails)
         {
-            bool status = true;
+            bool status = false;
             string msg = null;
             try
             {
                 status = repo.ValidateUserCredentials(userDetails);
-                if (status == true)
-                {
-                    msg = "Valid Credentials";
-                }
-                else
-                {
-                    msg = "Invalid Credentials";
-                }
             }
             catch (Exception)
             {
                 status = false;
                 msg = "Exception Caught";
             }
-            return msg;
+            return status;
         }
         #endregion
 
@@ -62,24 +54,7 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
         }
         #endregion
 
-        //#region AddSong
-        //[HttpPost]
-        //public int AddSong(string SongName, DateTime DateOfRelease, double AverageRating, string ImageCoverLocation)
-        //{
-        //    int result = 0;
-        //    try
-        //    {
-        //        result = repo.AddSong(SongName, DateOfRelease, AverageRating, ImageCoverLocation);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        result = -99;
-        //    }
-        //    return result;
-        //}
-        //#endregion
-
-
+        #region AddSong
         [HttpPost]
         public int AddSong(Models.Songs song)
         {
@@ -94,6 +69,8 @@ namespace DeltaX.Assignment.ServiceLayer.Controllers
             }
             return result;
         }
+        #endregion
+
     }
 
 }

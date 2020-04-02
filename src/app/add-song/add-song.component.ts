@@ -9,19 +9,35 @@ import { Router } from '@angular/router';
 })
 export class AddSongComponent implements OnInit {
 
-  status: number;
+  songId: number;
+  fileToUpload: File = null;
+  rating: number = 0;
+  email: string;
   constructor(private _userService:UserService,private router: Router) { }
 
 
   ngOnInit() {
+    this.email = sessionStorage.getItem('userEmail');
+    if (this.email == null) {
+      alert("You need to Login First")
+      this.router.navigate(['/login']);
+    }
+
   }
+
+  setRating($event) {
+
+    this.rating = $event;
+
+  }
+
   addSong(form: NgForm)
   {
-    this._userService.AddSong(form.value.songname, form.value.release, form.value.rating, form.value.image).subscribe(
+    this._userService.AddSong(form.value.songname, form.value.release, this.rating, "later").subscribe(
       x => {
-        this.status = x;
-        if (this.status >= 10000) {
-          this.router.navigate(['/addartist', status]);
+        this.songId = x;
+        if (this.songId >= 10000) {
+          this.router.navigate(['/addartist',this.songId]);
           
         }
         else {
@@ -33,5 +49,10 @@ export class AddSongComponent implements OnInit {
       },
       () => console.log("method executed successfully")
     );
+  }
+
+  handleFile(file: FileList)
+  {
+    this.fileToUpload = file.item(0);
   }
 }

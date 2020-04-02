@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { ISong } from '../../app/interfaces/songs';
 import { IArtistsName } from 'src/app/interfaces/artistsname';
+import { Text } from '@angular/compiler/src/render3/r3_ast';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class SongsService {
     return tempVar;
   }
 
-  getArtistsOfSong(SongId: number): Observable<IArtistsName[]>
+  getArtistsOfSong(SongId: number)
   {
     var param = "?SongId=" + SongId;
     let tempVar = this.http.get<IArtistsName[]>('http://localhost:49486/api/Songs/GetArtistsOfSong' + param).pipe(catchError(this.errorHandler));

@@ -30,7 +30,9 @@
               <label>Average Rating</label>
             </div>
             <div class="col; input-group">
-              <input type="number" name="rating" #rating="ngModel" class="form-control qkinput" min="1" max="5" required ngModel>
+              <!--<input type="number" name="rating" #rating="ngModel" class="form-control qkinput" min="1" max="5" required ngModel>-->
+                <app-rating (ratingEvent)="setRating($event)"></app-rating>
+              
             </div>
           </div>
           <div class="form-group">
@@ -38,7 +40,7 @@
               <label>Select Cover Image</label>
             </div>
             <div class="col; input-group">
-              <input type="text" name="image" #image="ngModel" class="form-control qkinput"  value="later" required ngModel>
+              <input type="file" name="image" #image="ngModel" accept="image/*" (change)="handleFile($event.target.files)" class="form-control qkinput" ngModel>
             </div>
           </div>
 

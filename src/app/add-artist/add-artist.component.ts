@@ -13,9 +13,16 @@ export class AddArtistComponent implements OnInit {
   songId: number;
   ArtistList: IArtist[];
   status: number;
+  email: string;
   constructor(private route: ActivatedRoute,private router:Router, private _artistservice: ArtistsService) { }
 
   ngOnInit() {
+
+    if (this.email == null) {
+      alert("You need to Login First")
+      this.router.navigate(['/login']);
+    }
+
     this.songId = this.route.snapshot.params['songId'];
 
     this._artistservice.getArtists().subscribe(
@@ -37,8 +44,6 @@ export class AddArtistComponent implements OnInit {
           this.status = x;
           if (this.status == 1) {
             alert("Song and Artists Added");
-            this.router.navigate(['/home']);
-
           }
           else {
             alert("Try again after some time");

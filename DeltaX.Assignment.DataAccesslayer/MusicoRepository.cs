@@ -102,27 +102,22 @@ namespace DeltaX.Assignment.DataAccessLayer
         public List<ArtistsName> GetArtistsOfSong(decimal SongId)
         {
             List<ArtistsName> ArtistsList = null;
-            //string Artists = null;
+            
             try
             {
                 SqlParameter prmSongId = new SqlParameter("@SongId", SongId);
                 prmSongId.SqlDbType = System.Data.SqlDbType.Decimal;
                 ArtistsList = context.ArtistsName.FromSql("SELECT * FROM dbo.ufn_GetArtistsOfSong(@SongId)", prmSongId).ToList();
-
-                //foreach (var v in ArtistsList)
-                //{
-                //    Artists = Artists + " " + v.ArtistName;
-                //}
-
             }
             catch (Exception)
             {
                 ArtistsList = null;
-              //  Artists = null;
+
             }
             return ArtistsList;
         }
         #endregion
+
 
         #region AddSong
         public int AddSong(string SongName, DateTime DateOfRelease, double AverageRating, string ImageCoverLocation)
@@ -173,6 +168,7 @@ namespace DeltaX.Assignment.DataAccessLayer
             return result;
         }
         #endregion
+
     }
 }
 

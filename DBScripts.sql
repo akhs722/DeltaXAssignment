@@ -88,8 +88,9 @@ primary key(SongId,ArtistId)
 Go
 
 
-insert into UserDetails values ('akhilshukla722@gmail.com','Akhil Shukla','akhil722')
+insert into UserDetails values ('abc@abc.com','abc_xyz','abc123')
 Go
+
 
 insert into Songs values ('shape of you','6-01-2017',4.7,'later')
 insert into Songs values ('rockstar','15-07-2017',4.4,'later')
@@ -175,7 +176,7 @@ BEGIN
 	BEGIN TRY
 		Select @userid = userid from UserDetails where email = @email
 		INSERT INTO UserRating VALUES (@userid,@SongId)
-		UPDATE Songs set AverageRating = @rating where SongId = @SongId 
+		UPDATE Songs set AverageRating = (AverageRating+@rating)/2 where SongId = @SongId 
 		RETURN 1
 	END TRY
 	BEGIN CATCH
@@ -222,5 +223,4 @@ BEGIN
 	END CATCH
 END
 GO
-
 

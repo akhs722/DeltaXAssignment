@@ -1,6 +1,15 @@
 # DeltaXAssignment
 This repository includes the solution for the given problem statement.
 
+Note: Login Credentials
+
+1) If using angular then default page will be home.
+2) You will have to login for making any edits.
+3) The credentials are as follows
+
+Email-> abc@abc.com
+Password -> 
+
 
 The Application includes three layers
 

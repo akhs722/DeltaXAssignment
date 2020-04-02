@@ -15,7 +15,7 @@ export class UserService {
   ValidateUserCredentials(email: string, password: string) {
     var userObj: IUser;
     userObj = { userid: 0, email: email, name: null, password: password };
-    return this.http.post<string>('http://localhost:49486/api/User/ValidateUserCredentials', userObj).pipe(catchError(this.errorHandler));
+    return this.http.post<boolean>('http://localhost:49486/api/User/ValidateUserCredentials', userObj).pipe(catchError(this.errorHandler));
   }
 
   UpdateRating(emailId: string, songid: number, rating: number): Observable<number> {
@@ -27,7 +27,7 @@ export class UserService {
   {
     var songObj: ISong;
     songObj = { songId: 0, songName: songName, dateOfRelease: dateOfRelease, averageRating: averageRating, imageCoverLocation: imageCoverLocation};
-    return this.http.put<number>('http://localhost:49486/api/User/AddSong', songObj).pipe(catchError(this.errorHandler));
+    return this.http.post<number>('http://localhost:49486/api/User/AddSong',songObj).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

@@ -9,10 +9,7 @@ import { UserService } from '../../services/user-service/user.service';
 })
 export class LoginComponentComponent implements OnInit {
 
-  status: string;
-  errorMsg: string;
-  msg: string;
-  showDiv: boolean = false;
+  status: boolean;
   constructor(private _userService: UserService,private router:Router) { }
 
   submitLoginForm(form: NgForm) {
@@ -20,8 +17,8 @@ export class LoginComponentComponent implements OnInit {
     this._userService.ValidateUserCredentials(form.value.email, form.value.password).subscribe(
       x => {
         this.status = x;
-        this.showDiv = true;
-        if (this.status.toLowerCase() != "invalid credentials") {
+        
+        if (this.status==true) {
           sessionStorage.setItem('userEmail', form.value.email);
           this.router.navigate(['/home']);
        }

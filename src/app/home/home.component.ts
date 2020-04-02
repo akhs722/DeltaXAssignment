@@ -6,6 +6,7 @@ import { SongsService } from 'src/services/info-service/songs.service';
 import { ArtistsService } from 'src/services/info-service/artists.service';
 import { UserService } from 'src/services/user-service/user.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,8 +18,9 @@ export class HomeComponent implements OnInit {
   SongList: ISong[];
   ArtistList: IArtist[];
   Artists: IArtistsName[];
-  str: string = null;
-  NewRating: number;
+  rating: number = 0;
+  str: string = "";
+  NewRating: number = 0;
   status: number;
   userLayout: boolean = false;
   commonLayout: boolean = false;
@@ -54,22 +56,27 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  setRating($event) {
 
-  Rate(song: ISong,rating:number) {
+    this.rating = $event;
 
-    if (rating != 0) {
+  }
+
+  Rate(song: ISong) {
+
+    if (this.rating != 0) {
       if (this.email == null) {
         alert('Login First');
       }
       else {
-        this.NewRating = (rating + song.averageRating) / 2;
+        this.NewRating = this.rating;      
         this._userservice.UpdateRating(this.email, song.songId, this.NewRating).subscribe(
           x => {
             this.status = x;
-             if (this.status != 1) {
-                    alert('Try After SomeTime')
-                    }
-              },
+            if (this.status != 1) {
+              alert('Try After SomeTime')
+            }
+          },
           y => {
              console.log(y);
               },
@@ -88,13 +95,10 @@ export class HomeComponent implements OnInit {
       },
       y => {
         console.log(y);
-      
       },
       () => console.log("Success")
     );
+    return SongId;
   }
-  for(any v of this.Artists)
-  {
-
-  }
+ 
 }

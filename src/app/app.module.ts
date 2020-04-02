@@ -10,6 +10,7 @@ import { CommonLayoutComponent } from './common-layout/common-layout.component';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { AddSongComponent } from './add-song/add-song.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AddArtistComponent } from './add-artist/add-artist.component';
     UserLayoutComponent,
     AddSongComponent,
     AddArtistComponent,
+    RatingComponent,
     
   ],
   imports: [

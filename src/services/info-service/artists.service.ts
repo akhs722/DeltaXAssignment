@@ -20,7 +20,7 @@ export class ArtistsService {
   songArtistRelation(songId:number,artistId:number) {
     var userObj: ISongArtistRelation;
     userObj = { songId: songId, artistId: artistId};
-    return this.http.post<number>('http://localhost:49486/api/Artist/SongArtistRelation', userObj).pipe(catchError(this.errorHandler));
+    return this.http.post<number>('http://localhost:49486/api/Artists/SongArtistRelation', userObj).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

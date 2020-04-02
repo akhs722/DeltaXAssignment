@@ -17,6 +17,6 @@ export class UserLayoutComponent implements OnInit {
   }
   logOut() {
     sessionStorage.removeItem('userEmail');
-    this._router.navigate(['']);
+    this._router.navigate(['/login']);
   }
 }

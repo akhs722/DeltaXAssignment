@@ -25,9 +25,12 @@ namespace DeltaX.Assignment.ServiceLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(c =>
+            services.AddCors(options =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
+                });
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -43,7 +46,7 @@ namespace DeltaX.Assignment.ServiceLayer
             {
                 app.UseHsts();
             }
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors("EnableCORS");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
