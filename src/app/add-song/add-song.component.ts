@@ -27,8 +27,8 @@ export class AddSongComponent implements OnInit {
 
   setRating($event) {
 
-    this.rating = $event;
-
+    this.rating = $event.rating;
+    alert(this.rating)
   }
 
   addSong(form: NgForm)

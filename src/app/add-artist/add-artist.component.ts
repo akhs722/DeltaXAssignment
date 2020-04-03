@@ -47,7 +47,7 @@ export class AddArtistComponent implements OnInit {
         x => {
           this.status = x;
           if (this.status == 1) {
-            alert("Song and Artists Added");
+            alert("Song and artist added choose another from the dropdown or move back to home.");
           }
           else {
             alert("Try again after some time");

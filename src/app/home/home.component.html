@@ -23,9 +23,10 @@
         <td>{{s.dateOfRelease}}</td>
         <td>{{s.averageRating}}</td>
         <td></td>
-        <td (change)="Rate(s)">
-          <app-rating (ratingEvent)="setRating($event)"></app-rating>
+        <td>
+          <app-rating [songId]='s.songId' (ratingClick)='ratingComponentClick($event)'></app-rating>
         </td>
+        <!--<app-rating (ratingEvent)="setRating($event)"></app-rating>-->
       </tr>
     </table>
   </div>

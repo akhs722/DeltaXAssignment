@@ -20,19 +20,17 @@ export class HomeComponent implements OnInit {
   Artists: IArtistsName[];
   rating: number = 0;
   str: string = "";
-  NewRating: number = 0;
   status: number;
   userLayout: boolean = false;
   commonLayout: boolean = false;
-  constructor(private _userservice: UserService,private _songservice: SongsService, private _artistservice: ArtistsService) { }
+  constructor(private _userservice: UserService, private _songservice: SongsService, private _artistservice: ArtistsService) { }
   ngOnInit() {
 
     this.email = sessionStorage.getItem('userEmail');
     if (this.email == null) {
       this.commonLayout = true;
     }
-    else
-    {
+    else {
       this.userLayout = true;
     }
     this._songservice.getSongs().subscribe(
@@ -56,36 +54,31 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  setRating($event) {
 
-    this.rating = $event;
+  ratingComponentClick(song: any) {
 
-  }
-
-  Rate(song: ISong) {
-
+    this.rating = song.rating;
     if (this.rating != 0) {
       if (this.email == null) {
         alert('Login First');
       }
       else {
-        this.NewRating = this.rating;      
-        this._userservice.UpdateRating(this.email, song.songId, this.NewRating).subscribe(
-          x => {
-            this.status = x;
-            if (this.status != 1) {
-              alert('Try After SomeTime')
-            }
+        this._userservice.UpdateRating(this.email, song.songId, this.rating).subscribe(
+         x => {
+        this.status = x;
+        if (this.status != 1) {
+          alert('Try After SomeTime')
+        }
+      },
+      y => {
+         console.log(y);
           },
-          y => {
-             console.log(y);
-              },
-          () => console.log("Success")
-        );
+      () => console.log("Success")
+    );
       }
+      this.ngOnInit();
     }
-  }
-
+}
   GetArtistsOfSong(SongId:number){
 
     this._songservice.getArtistsOfSong(SongId).subscribe(
