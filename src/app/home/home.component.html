@@ -22,11 +22,14 @@
         <td>{{s.songName }}</td>
         <td>{{s.dateOfRelease}}</td>
         <td>{{s.averageRating}}</td>
-        <td></td>
+         
+        <td>
+          <app-show-artist [songId]='s.songId'></app-show-artist>
+        </td>
         <td>
           <app-rating [songId]='s.songId' (ratingClick)='ratingComponentClick($event)'></app-rating>
         </td>
-        <!--<app-rating (ratingEvent)="setRating($event)"></app-rating>-->
+
       </tr>
     </table>
   </div>

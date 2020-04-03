@@ -11,11 +11,14 @@ export class RatingComponent implements OnInit {
   @Input() rating: number;
   @Input() songId: number;
   @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
- // @Output() ratingEvent = new EventEmitter<number>();;
-  constructor() { }
+  inputName:string
+  // @Output() ratingEvent = new EventEmitter<number>();;
+  constructor() {
+   
+  }
 
   ngOnInit() {
-  
+    this.inputName = "a" + this.songId;
   }
 
   onClick(rating: number){
@@ -25,7 +28,5 @@ export class RatingComponent implements OnInit {
       songId: this.songId,
       rating: rating
     });
-   // alert(this.rating)
-    //this.ratingEvent.emit(this.rating)
   }
 }

@@ -13,7 +13,7 @@ import { UserService } from 'src/services/user-service/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
   email: string;
   SongList: ISong[];
   ArtistList: IArtist[];
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   userLayout: boolean = false;
   commonLayout: boolean = false;
   constructor(private _userservice: UserService, private _songservice: SongsService, private _artistservice: ArtistsService) { }
+
   ngOnInit() {
 
     this.email = sessionStorage.getItem('userEmail');
@@ -79,18 +80,21 @@ export class HomeComponent implements OnInit {
       this.ngOnInit();
     }
 }
-  GetArtistsOfSong(SongId:number){
-
-    this._songservice.getArtistsOfSong(SongId).subscribe(
-      x => {
-        this.Artists = null;
-        this.Artists = x;
-      },
-      y => {
-        console.log(y);
-      },
-      () => console.log("Success")
-    );
-  }
- 
+  //GetArtistsOfSong(SongId:number){
+  //  this.str = "";
+  //  this._songservice.getArtistsOfSong(SongId).subscribe(
+  //    x => {
+  //      this.Artists = null;
+  //      this.Artists = x;
+  //    },
+  //    y => {
+  //      console.log(y);
+  //    },
+  //    () => console.log("Success")
+  //  );
+  //  for (let v of this.Artists) {
+  //    this.str = this.str + v.artistName;
+  //  }
+  //}
+  
 }

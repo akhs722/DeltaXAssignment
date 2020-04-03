@@ -11,6 +11,7 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { AddSongComponent } from './add-song/add-song.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
 import { RatingComponent } from './rating/rating.component';
+import { ShowArtistComponent } from './show-artist/show-artist.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RatingComponent } from './rating/rating.component';
     AddSongComponent,
     AddArtistComponent,
     RatingComponent,
+    ShowArtistComponent,
     
   ],
   imports: [

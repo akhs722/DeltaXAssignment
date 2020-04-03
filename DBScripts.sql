@@ -245,3 +245,5 @@ BEGIN
 	END CATCH
 END
 GO
+
+select * from songs
