@@ -4,19 +4,19 @@ This repository includes the solution for the given problem statement.
 
 The Application includes three layers
 
-1) DataAccessLayer using enitiy framework core v 2.1
-2) ServiceLayer using Asp.Net Core Web Api 
-3) PresentationLayer using Angular6
-4) DataBase Used Microsoft SQL Server
+1) DataAccessLayer using enitiy framework core v 2.1.
+2) ServiceLayer using Asp.Net Core Web Api. 
+3) PresentationLayer using Angular6.
+4) DataBase Used is Microsoft SQL Server Express.
 5) Software Tool used is Visual Studio 2017 and Microsoft SQL Server Management Studio 18
-6) Database Microsft SQL Server Express
 
-At first you need to Execute the Ms-Sql scripts provided.
+NOTE:
+At first you need to Execute the Ms-Sql scripts provided in the repository.
 
-In the Repository
+What's within the Repository->
 
 1) "src" folder of the angular.
-NOTE: I have not included the "node_modules"
+NOTE: I have not included the "node_modules" and other files.
 
 2) Database Scripts
 
@@ -29,7 +29,7 @@ teps to operate
 	b) Similarly add WebApi to the above solution and build.
 	Finally build the above solution as whole.
 
-2) DataAccessLayer includes the controllers and actions.
+2) ServiceLayer includes the controllers and actions.
 
 Using Angular 
 
