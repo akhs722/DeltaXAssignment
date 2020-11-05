@@ -635,6 +635,17 @@ export class ViewCartComponent {
 
 }
 
+//cors policy
 
+startup.cs -> ConfigureServices
+services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
+                });
+            });
+startup.cs -> Configure   
+ app.UseCors("EnableCORS");
 
 
